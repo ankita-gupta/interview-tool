@@ -101,7 +101,7 @@ if not st.session_state.feedback_shown and st.session_state.chat_complete:
 
 if st.session_state.feedback_shown:
     st.subheader('Feedback')
-    conversation_history= '\n'.join([f"{m['role']}:{m['content']} "for m in st.session_state.mesages])
+    conversation_history= '\n'.join([f"{m['role']}:{m['content']} "for m in st.session_state.messages])
 
     feedback_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
     feedback_completion = client.responses.create(

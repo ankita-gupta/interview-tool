@@ -104,7 +104,7 @@ if st.session_state.feedback_shown:
     conversation_history= '\n'.join([f"{m['role']}:{m['content']} "for m in st.session_state.messages])
 
     feedback_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-    feedback_completion = client.responses.create(
+    feedback_completion = feedback_client.responses.create(
         model='gpt-4o-mini',
         input=[{'role':'system', 'content':'''You are a helpful tool that provides feedback on an interview performance.
                 Before the feedback give a score of 1 to 10.

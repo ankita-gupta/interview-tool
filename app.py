@@ -49,9 +49,9 @@ if not st.session_state['setup_complete']:
     with col1:
         st.session_state['level']=st.radio("Choose level",key='visibility',options=["Junior","Mid-Level","Senior"])
     with col2:
-        st.session_state['position']=st.selectbox("Select a position",options=("Data Scientist","Data Engineer", "ML Engineer","BI Analyst","Financial Analyst"))
+        st.session_state['position']=st.selectbox("Select a position",options=("Technical Lead","Data Scientist","Data Engineer", "ML Engineer","BI Analyst","Financial Analyst"))
 
-    st.session_state['company'] = st.selectbox("Choose a company",options=("Amazon","Meta","Google","Udemy","LinkedIn","Spotify"))
+    st.session_state['company'] = st.selectbox("Choose a company",options=("Amazon","Meta","Google","Infosys","Udemy","LinkedIn","Spotify"))
 
     st.write(f'**Your Information:** {st.session_state['level']} {st.session_state['position']} at {st.session_state['company']}')
     if st.button('Start Interview', on_click=setupComplete):
